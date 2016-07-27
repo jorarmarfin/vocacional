@@ -19,6 +19,13 @@
             <h3 class="uppercase">Administracion</h3>
         </li>
         <li class="nav-item  ">
+            <a href="{{route('admin.users.index')}}" class="nav-link nav-toggle">
+                <i class="icon-diamond"></i>
+                <span class="title">Usuarios</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item  ">
             <a href="javascript:;" class="nav-link nav-toggle">
                 <i class="icon-diamond"></i>
                 <span class="title">Empresas</span>
@@ -32,6 +39,7 @@
                 </li>
             </ul>
         </li>
+
 
     </ul>
     <!-- END SIDEBAR MENU -->

@@ -44,4 +44,11 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasOne('\App\Models\Catalogo','id','idrole');
     }
+    /**
+     * Atributos de la clase Users
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
 }

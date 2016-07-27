@@ -4,7 +4,7 @@
 @include('users.menu-profile')
 @stop
 
-@section('name-user')
+@section('username')
 {!!Auth::user()->name!!}
 @stop
 
