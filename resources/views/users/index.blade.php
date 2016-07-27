@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('menu-user')
-@include('admin.menu-profile')
+@include('users.menu-profile')
 @stop
 
 @section('name-user')
@@ -9,11 +9,11 @@
 @stop
 
 @section('page-title')
-Panel de
+
 @stop
 
 @section('page-subtitle')
-  Administracion
+ Panel de Usuario
 @stop
 
 @section('content')
@@ -21,5 +21,5 @@ Panel de
 @stop
 
 @section('sidebar')
-@include('admin.menu')
+@include('users.sidebar')
 @stop

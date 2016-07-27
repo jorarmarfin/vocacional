@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
+
+use Auth;
+use illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -62,4 +66,39 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    /**
+     * Get the post register / login redirect path.
+     * framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php
+     *
+     * @return string
+     */
+    public function redirectPath()
+    {
+        switch (Auth::user()->role->nombre) {
+            case 'root':
+                    return route('home.index');
+                break;
+
+            default:
+                    return route('users.index');
+                break;
+        }
+    }
+    /**
+     * Get the needed authorization credentials from the request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    protected function getCredentials(Request $request)
+    {
+        return [
+        'email' => $request->get('email'),
+        'password' => $request->get('password'),
+        'activo' => true
+        ];
+        // return $request->only($this->loginUsername(), 'password');
+    }
+
+
 }

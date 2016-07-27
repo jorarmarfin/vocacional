@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>::SisBi::</title>
+	<title>@yield('title','::SisBa::')</title>
 	@include('layouts.partials.styles-mandatory')
 	@include('layouts.partials.styles-plugins')
 	@include('layouts.partials.styles-global')
