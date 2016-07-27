@@ -1,25 +1,25 @@
-@extends('layouts.admin')
+@extends('layouts.base')
 
-@section('title')
-::Sistema Base::
+@section('menu-user')
+@include('admin.menu-profile')
 @stop
 
-@section('title-content-header')
-Blank page
+@section('name-user')
+{!!Auth::user()->name!!}
 @stop
 
-@section('title-content-header')
-Blank page
+@section('page-title')
+
 @stop
 
-@section('subtitle-content-header')
-it all starts here
+@section('page-subtitle')
+ Panel de Administracion
 @stop
 
 @section('content')
-box
+
 @stop
 
-@section('javascript')
-
+@section('sidebar')
+@include('admin.menu')
 @stop
