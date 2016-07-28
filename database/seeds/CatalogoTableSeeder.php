@@ -13,7 +13,7 @@ class CatalogoTableSeeder extends Seeder
     public function run()
     {
         Catalogo::create(['idtable' => 0,'iditem' => 0, 'codigo' => 'MAE','nombre'=>'MAESTRO DE TABLAS','descripcion'=>'MAESTRO DE TABLAS','valor'=> null,'activo'=>true]);
-        Catalogo::create(['idtable' => 0,'iditem' => 1, 'codigo' => 'ROLES','nombre' => 'ROL USUARIO','descripcion'=>'Rol de lo su suarios al sistema','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 0,'iditem' => 1, 'codigo' => 'ROLES','nombre' => 'ROLES','descripcion'=>'Rol de lo su suarios al sistema','valor'=> null,'activo'=>true]);
         /**
          * sub tablas
          */

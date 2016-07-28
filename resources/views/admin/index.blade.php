@@ -4,7 +4,11 @@
 @include('admin.menu-profile')
 @stop
 
-@section('name-user')
+@section('userimg')
+storage/fotos/{!!Auth::user()->foto!!}
+@stop
+
+@section('username')
 {!!Auth::user()->name!!}
 @stop
 
@@ -14,6 +18,7 @@ Panel de
 
 @section('page-subtitle')
   Administracion
+
 @stop
 
 @section('content')

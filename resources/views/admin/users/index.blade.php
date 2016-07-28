@@ -1,5 +1,9 @@
 @extends('layouts.base')
 
+@section('userimg')
+/storage/fotos/{!!Auth::user()->foto!!}
+@stop
+
 @section('menu-user')
 @include('admin.menu-profile')
 @stop
@@ -16,6 +20,7 @@
 @stop
 
 @section('content')
+{!! Alert::render() !!}
 <div class="row">
 	<div class="col-md-8">
 		<div class="portlet box green">
@@ -31,7 +36,7 @@
 					<i class="fa fa-user"></i>
 				</a>
 				<div class="table-scrollable">
-					<table class="table table-striped table-hover">
+					<table class="table table-striped table-hover" data-toggle="table"git  data-pagination="true">
 						<thead>
 							<tr>
 								<th>Nombre</th>
@@ -72,4 +77,8 @@
 
 @section('js-plugins')
 {!! Html::script('assets/global/plugins/jquery-ui/jquery-ui.min.js') !!}
+{!! Html::script('assets/global/plugins/bootstrap-table/bootstrap-table.min.js') !!}
+@stop
+@section('plugins-styles')
+{!! Html::style('assets/global/plugins/bootstrap-table/bootstrap-table.min.css') !!}
 @stop

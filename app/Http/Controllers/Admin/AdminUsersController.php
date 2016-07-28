@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\User;
 use App\Models\Catalogo;
 
+use Storage;
+use File;
+
 use Illuminate\Http\Request;
+use Styde\Html\Facades\Alert;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -53,7 +57,16 @@ class AdminUsersController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $data = $request->all();
+        $user = new User($data);
+        $file = $request->file('file');
+        $namefile = $file->getClientOriginalName();
+        $user['foto']= $namefile;
+        Storage::disk('local')->put('/fotos/'.$namefile,File::get($file));
+        $user->save();
+        Alert::success('Usuario Registrado con exito');
+        return redirect()->route('admin.users.index');
+
     }
 
     /**
