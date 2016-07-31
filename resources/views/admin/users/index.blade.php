@@ -41,6 +41,7 @@
 							<tr>
 								<th>Nombre</th>
 								<th>fecha</th>
+								<th>foto</th>
 								<th>Opciones</th>
 							</tr>
 						</thead>
@@ -49,8 +50,9 @@
 							<tr>
 								<td>{{$item->name}}</td>
 								<td>{{$item->email}}</td>
+								<td><img src="{{asset('/storage/fotos/'.$item->foto)}}" width='25px'></td>
 								<td>
-									<a href="#" title="Editar"class="btn btn-icon-only green-haze">
+									<a href="#" title="Editar"class="btn btn-icon-only green-haze" id="Edit">
 										<i class="fa fa-edit"></i>
 									</a>
 									<a href="#" title="Eliminar" class="btn -btn-icon-only red">
@@ -81,4 +83,14 @@
 @stop
 @section('plugins-styles')
 {!! Html::style('assets/global/plugins/bootstrap-table/bootstrap-table.min.css') !!}
+@stop
+
+@section('js-scripts')
+<script>
+jQuery(document).ready(function() {
+	$("#Edit").click(function() {
+		alert('prueba');
+	});
+});
+</script>
 @stop
