@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->integer('idrole')->unsigned();
             $table->string('foto',10);
+            $table->string('menu',10)->default('menu.users');
             $table->boolean('activo');
             $table->rememberToken();
             $table->timestamps();

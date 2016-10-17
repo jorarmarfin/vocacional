@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+require __DIR__.'/Routes/RouteAdmin.php';
 require __DIR__.'/Routes/RouteAuth.php';
-require __DIR__.'/Routes/RouteHome.php';
 require __DIR__.'/Routes/RouteUsers.php';
-require __DIR__.'/Routes/RouteAdminUsers.php';
+require __DIR__.'/Routes/RouteHome.php';

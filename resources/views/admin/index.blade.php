@@ -5,7 +5,7 @@
 @stop
 
 @section('userimg')
-storage/fotos/{!!Auth::user()->foto!!}
+{{ asset('storage/fotos/'.Auth::user()->foto) }}
 @stop
 
 @section('username')
@@ -26,5 +26,5 @@ Panel de
 @stop
 
 @section('sidebar')
-@include('admin.menu')
+@include(Auth::user()->menu)
 @stop

@@ -1,6 +1,6 @@
 <?php
 Route::group(['prefix' => 'admin','middleware'=>'auth','namespace'=>'Admin'], function() {
-	Route::resource('users', 'AdminUsersController');
+	Route::resource('users', 'UsersController');
 });
 
 

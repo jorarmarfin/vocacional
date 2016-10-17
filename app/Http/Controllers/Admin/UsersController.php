@@ -14,7 +14,7 @@ use Styde\Html\Facades\Alert;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminUsersController extends Controller
+class UsersController extends Controller
 {
     public function __construct() {
         $this->beforeFilter('@findUser',['only'=>['show','edit','update','destroy','userActivate']]);
