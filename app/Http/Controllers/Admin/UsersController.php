@@ -10,6 +10,7 @@ use File;
 
 use Illuminate\Http\Request;
 use Styde\Html\Facades\Alert;
+use Illuminate\Routing\Route;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -88,7 +89,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = $this->user;
+        return view('admin.users.edit',compact('user'));
     }
 
     /**
@@ -100,7 +102,10 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->user->fill($request->all());
+        $this->user->save();
+        Alert::success('Usuario actualizado');
+        return redirect()->route('admin.users.index');
     }
 
     /**

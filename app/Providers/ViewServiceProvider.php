@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Http\ViewComposers\RolesModelForm;
+use App\Http\ViewComposers\ControlSelectData;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -15,8 +15,8 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->make('view')->composer(
-            ['admin.users.index'],
-            RolesModelForm::class
+            ['admin.users.index','admin.users.edit'],
+            ControlSelectData::class
             );
     }
 

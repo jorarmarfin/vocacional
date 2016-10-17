@@ -30,4 +30,7 @@ class Catalogo extends Model
 						 ->where('nombre',$NameSubTable)
 						 ->where('activo',1)->lists('id')[0];
 	}
+	public function scopeidroot($cadenaSQL){
+		return $cadenaSQL->select('id')->where('codigo','root')->where('nombre','root')->get()[0];
+	}
 }

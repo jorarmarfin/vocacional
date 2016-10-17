@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Request;
  * 3) si creas un providder registralo en conf/app
  * 4)
  */
-class RolesModelForm
+class ControlSelectData
 {
 	public function compose(View $view)
 	{

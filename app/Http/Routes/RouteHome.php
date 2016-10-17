@@ -1,5 +1,10 @@
 <?php
 
 Route::group(['middleware'=>'auth'], function() {
-	Route::resource('home','HomeController');
+
+	Route::get('/', [
+	 'uses' => 'HomeController@index',
+	 'as' => 'home.index'
+	]);
+
 });

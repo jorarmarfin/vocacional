@@ -1,24 +1,5 @@
 @extends('layouts.base')
 
-@section('userimg')
-/storage/fotos/{!!Auth::user()->foto!!}
-@stop
-
-@section('menu-user')
-@include('admin.menu-profile')
-@stop
-
-@section('name-user')
-{!!Auth::user()->name!!}
-@stop
-
-@section('page-title')
-@stop
-
-@section('page-subtitle')
-
-@stop
-
 @section('content')
 {!! Alert::render() !!}
 <div class="row">
@@ -36,7 +17,7 @@
 					<i class="fa fa-user"></i>
 				</a>
 				<div class="table-scrollable">
-					<table class="table table-striped table-hover" data-toggle="table"git  data-pagination="true">
+					<table class="table table-striped table-hover" data-toggle="table" data-pagination="true">
 						<thead>
 							<tr>
 								<th>Nombre</th>
@@ -52,7 +33,7 @@
 								<td>{{$item->email}}</td>
 								<td><img src="{{asset('/storage/fotos/'.$item->foto)}}" width='25px'></td>
 								<td>
-									<a href="#" title="Editar"class="btn btn-icon-only green-haze" id="Edit">
+									<a href="{{ route('admin.users.edit',$item->id) }}" title="Editar"class="btn btn-icon-only green-haze" >
 										<i class="fa fa-edit"></i>
 									</a>
 									<a href="#" title="Eliminar" class="btn -btn-icon-only red">
@@ -73,24 +54,34 @@
 @include('admin.users.modals.create')
 @stop
 
+@section('userimg')
+{{ asset('/storage/fotos/'.Auth::user()->foto) }}
+@stop
+
+@section('menu-user')
+@include('admin.menu-profile')
+@stop
+
+@section('name-user')
+{!!Auth::user()->name!!}
+@stop
+
+@section('page-title')
+@stop
+
+@section('page-subtitle')
+
+@stop
+
 @section('sidebar')
-@include('admin.menu')
+@include(Auth::user()->menu)
+@stop
+
+@section('plugins-styles')
+{!! Html::style('assets/global/plugins/bootstrap-table/bootstrap-table.min.css') !!}
 @stop
 
 @section('js-plugins')
 {!! Html::script('assets/global/plugins/jquery-ui/jquery-ui.min.js') !!}
 {!! Html::script('assets/global/plugins/bootstrap-table/bootstrap-table.min.js') !!}
-@stop
-@section('plugins-styles')
-{!! Html::style('assets/global/plugins/bootstrap-table/bootstrap-table.min.css') !!}
-@stop
-
-@section('js-scripts')
-<script>
-jQuery(document).ready(function() {
-	$("#Edit").click(function() {
-		alert('prueba');
-	});
-});
-</script>
 @stop
