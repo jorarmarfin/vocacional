@@ -7,7 +7,7 @@
     <p> Escriba de nuevo su contraseña :  </p>
 		<div class="form-group">
 			{!!Form::hidden('token',$token);!!}
-			{!!Form::text('email', null , ['class'=>'form-control','placeholder'=>'Email']);!!}
+			{!!Form::email('email', null , ['class'=>'form-control','placeholder'=>'Email']);!!}
 		</div>
 		<div class="form-group">
 			{!!Form::password('password' , ['class'=>'form-control','placeholder'=>'Password']);!!}
@@ -18,7 +18,6 @@
 		<div class="form-actions">
 			{!!Form::submit('Enviar',['class'=>'btn green uppercase'])!!}
 	        <a href="{{ route('auth.login') }}" class="btn default">Regresar</a>
-        </div>
         </div>
 {!! Form::close() !!}
 @stop
