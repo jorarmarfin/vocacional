@@ -78,7 +78,9 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = $this->user;
+        Alert::danger('ALERTA')->details('Esta seguro de eliminar este registro no podra deshacer esta opcion');
+        return view('admin.users.delete',compact('user'));
     }
 
     /**
@@ -116,6 +118,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        Alert::success('Usuario Eliminado');
+        return redirect()->route('admin.users.index');
     }
 }

@@ -2,12 +2,12 @@
 
 @section('content')
 {!! Alert::render() !!}
-<div class="portlet box yellow-gold">
+<div class="portlet box red">
 	<div class="portlet-title">
 		<div class="caption"><i class="fa fa-gift"></i>Formulario de Usuarios </div>
 	</div>
 	<div class="portlet-body form">
-		{!! Form::model($user,['route'=>['admin.users.update',$user],'method'=>'PUT','files'=>true,'class'=>'form-horizontal']) !!}
+		{!! Form::model($user,['route'=>['admin.users.destroy',$user],'method'=>'DELETE','files'=>true,'class'=>'form-horizontal']) !!}
 			<div class="form-body">
 				<div class="form-group">
 					{!!Form::label('lblNombre', 'Nombre del usuario');!!}
@@ -31,7 +31,7 @@
 
 			</div>
 			<div class="form-actions">
-				{!!Form::submit('Actualizar',['class'=>'btn green uppercase'])!!}
+				{!!Form::submit('Eliminar',['class'=>'btn red uppercase'])!!}
 				<a href="{{ route('admin.users.index') }}" class="btn default">REGRESAR</a>
 			</div>
 		{!! Form::close() !!}

@@ -36,7 +36,7 @@
 									<a href="{{ route('admin.users.edit',$item->id) }}" title="Editar"class="btn btn-icon-only green-haze" >
 										<i class="fa fa-edit"></i>
 									</a>
-									<a href="#" title="Eliminar" class="btn -btn-icon-only red">
+									<a href="{{ route('admin.users.show',$item->id) }}" title="Eliminar" class="btn -btn-icon-only red">
 										<i class="fa fa-trash"></i>
 									</a>
 								</td>
