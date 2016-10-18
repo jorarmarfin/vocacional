@@ -17,7 +17,7 @@
 					<i class="fa fa-user"></i>
 				</a>
 				<div class="table-scrollable">
-					<table class="table table-striped table-hover" data-toggle="table" data-pagination="true">
+					<table class="table table-striped table-hover" data-toggle="table" data-pagination="true" data-search="true">
 						<thead>
 							<tr>
 								<th>Nombre</th>
