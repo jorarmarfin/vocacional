@@ -61,9 +61,12 @@ class UsersController extends Controller
         $data = $request->all();
         $user = new User($data);
         $file = $request->file('file');
-        $namefile = $file->getClientOriginalName();
-        $user['foto']= $namefile;
-        Storage::disk('local')->put('/fotos/'.$namefile,File::get($file));
+        if (isset($file)) {
+            $namefile = $file->getClientOriginalName();
+            $user['foto']= $namefile;
+            Storage::disk('local')->put('/fotos/'.$namefile,File::get($file));
+        };
+
         $user->save();
         Alert::success('Usuario Registrado con exito');
         return redirect()->route('admin.users.index');
