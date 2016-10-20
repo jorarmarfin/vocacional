@@ -53,6 +53,7 @@
     </div>
 	<!-- BEGIN CORE PLUGINS -->
 	@include('layouts.partials.js-core')
+    @yield('js-plugins')
     <!-- END CORE PLUGINS -->
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
     <script src={{asset("assets/global/scripts/app.min.js")}} type="text/javascript"></script>
@@ -62,6 +63,5 @@
     <script src={{asset("assets/layouts/layout/scripts/demo.min.js")}} type="text/javascript"></script>
     <script src={{asset("assets/layouts/global/scripts/quick-sidebar.min.js")}} type="text/javascript"></script>
     <!-- END THEME LAYOUT SCRIPTS -->
-    @yield('js-plugins')
     @yield('js-scripts')
 </body>
