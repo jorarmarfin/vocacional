@@ -12,8 +12,10 @@ class CatalogoTableSeeder extends Seeder
      */
     public function run()
     {
-        Catalogo::create(['idtable' => 0,'iditem' => 0, 'codigo' => 'MAE','nombre'=>'MAESTRO DE TABLAS','descripcion'=>'MAESTRO DE TABLAS','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 0,'iditem' => 0, 'codigo' => 'MAE','nombre'=>'MAESTRO','descripcion'=>'MAESTRO DE TABLAS','valor'=> null,'activo'=>true]);
         Catalogo::create(['idtable' => 0,'iditem' => 1, 'codigo' => 'ROLES','nombre' => 'ROLES','descripcion'=>'Rol de lo su suarios al sistema','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 0,'iditem' => 1, 'codigo' => 'JEF','nombre' => 'JEFATURA','descripcion'=>'Jefatura OCAD','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 0,'iditem' => 1, 'codigo' => 'IMGCRED','nombre' => 'IMAGEN CREDENCIAL','descripcion'=>'Imagen de fondo de la credencial','valor'=> null,'activo'=>true]);
         /**
          * sub tablas
          */
