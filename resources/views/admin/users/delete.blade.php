@@ -45,7 +45,7 @@
 @stop
 
 @section('menu-user')
-@include('admin.menu-profile')
+@include('menu.profile-admin')
 @stop
 
 @section('name-user')

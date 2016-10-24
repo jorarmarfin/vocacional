@@ -9,7 +9,7 @@
         </li>
         <!-- END SIDEBAR TOGGLER BUTTON -->
         <li class="nav-item start ">
-            <a href="javascript:;" class="nav-link nav-toggle">
+            <a href="{{ route('home.index') }}" class="nav-link nav-toggle">
                 <i class="icon-home"></i>
                 <span class="title">Escritorio</span>
                 <span class="arrow"></span>
@@ -28,13 +28,13 @@
         <li class="nav-item  ">
             <a href="javascript:;" class="nav-link nav-toggle">
                 <i class="icon-diamond"></i>
-                <span class="title">Empresas</span>
+                <span class="title">Catalogo</span>
                 <span class="arrow"></span>
             </a>
             <ul class="sub-menu">
                 <li class="nav-item  ">
-                    <a href="ui_colors.html" class="nav-link ">
-                        <span class="title">Empresa 1</span>
+                    <a href="{{ route('catalogo.index','maestro') }}" class="nav-link ">
+                        <span class="title">Maestro</span>
                     </a>
                 </li>
             </ul>

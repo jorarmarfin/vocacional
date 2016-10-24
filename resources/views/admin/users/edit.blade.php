@@ -45,8 +45,12 @@
 @stop
 
 @section('menu-user')
-@include('admin.menu-profile')
+@include('menu.profile-admin')
 @stop
+@section('sidebar')
+@include(Auth::user()->menu)
+@stop
+
 
 @section('name-user')
 {!!Auth::user()->name!!}
@@ -59,9 +63,6 @@
 
 @stop
 
-@section('sidebar')
-@include(Auth::user()->menu)
-@stop
 
 
 

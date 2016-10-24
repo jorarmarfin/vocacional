@@ -59,7 +59,11 @@
 @stop
 
 @section('menu-user')
-@include('admin.menu-profile')
+@include('menu.profile-admin')
+@stop
+
+@section('sidebar')
+@include(Auth::user()->menu)
 @stop
 
 @section('name-user')
@@ -73,9 +77,7 @@
 
 @stop
 
-@section('sidebar')
-@include(Auth::user()->menu)
-@stop
+
 
 @section('plugins-styles')
 {!! Html::style('assets/global/plugins/bootstrap-table/bootstrap-table.min.css') !!}

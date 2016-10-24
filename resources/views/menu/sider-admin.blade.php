@@ -20,7 +20,7 @@
         </li>
         <li class="nav-item  ">
             <a href="{{route('admin.users.index')}}" class="nav-link nav-toggle">
-                <i class="icon-diamond"></i>
+                <i class="icon-users"></i>
                 <span class="title">Usuarios</span>
                 <span class="arrow"></span>
             </a>
@@ -28,13 +28,13 @@
         <li class="nav-item  ">
             <a href="javascript:;" class="nav-link nav-toggle">
                 <i class="icon-diamond"></i>
-                <span class="title">Empresas</span>
+                <span class="title">Catalogo</span>
                 <span class="arrow"></span>
             </a>
             <ul class="sub-menu">
                 <li class="nav-item  ">
-                    <a href="ui_colors.html" class="nav-link ">
-                        <span class="title">Empresa 1</span>
+                    <a href="{{ route('catalogo.gestion','maestro') }}" class="nav-link ">
+                        <span class="title">Maestro</span>
                     </a>
                 </li>
             </ul>

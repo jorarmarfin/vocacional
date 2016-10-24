@@ -14,5 +14,6 @@
 require __DIR__.'/Routes/RouteHome.php';
 
 require __DIR__.'/Routes/RouteAdmin.php';
+require __DIR__.'/Routes/RouteCatalogo.php';
 require __DIR__.'/Routes/RouteAuth.php';
 require __DIR__.'/Routes/RouteUsers.php';

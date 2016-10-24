@@ -1,7 +1,11 @@
 @extends('layouts.base')
 
 @section('menu-user')
-@include('admin.menu-profile')
+@include('menu.profile-admin')
+@stop
+
+@section('sidebar')
+@include(Auth::user()->menu)
 @stop
 
 @section('userimg')
@@ -11,6 +15,8 @@
 @section('username')
 {!!Auth::user()->name!!}
 @stop
+
+
 
 @section('page-title')
 Panel de
@@ -25,6 +31,4 @@ Panel de
 
 @stop
 
-@section('sidebar')
-@include(Auth::user()->menu)
-@stop
+

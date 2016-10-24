@@ -21,7 +21,7 @@ class CreateCatalogosTable extends Migration
             $table->string('nombre', 50)->nullable();
             $table->string('descripcion', 200)->nullable();
             $table->integer('valor')->nullable();
-            $table->boolean('activo')->nullable();
+            $table->boolean('activo')->nullable()->default(true);
 
             $table->timestamps();
             $table->unique(['idtable','iditem'],'ak_catalogo');
