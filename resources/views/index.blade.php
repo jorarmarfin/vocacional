@@ -28,7 +28,7 @@ Panel de
 @stop
 
 @section('content')
-qwe
+asd
 @stop
 
 
