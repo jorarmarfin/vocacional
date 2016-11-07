@@ -8,11 +8,11 @@
 @include(Auth::user()->menu)
 @stop
 
-@section('userimg')
+@section('user-img')
 {{ asset('storage/fotos/'.Auth::user()->foto) }}
 @stop
 
-@section('username')
+@section('user-name')
 {!!Auth::user()->name!!}
 @stop
 

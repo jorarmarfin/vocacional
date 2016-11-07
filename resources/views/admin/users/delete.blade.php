@@ -40,7 +40,7 @@
 @include('admin.users.modals.create')
 @stop
 
-@section('userimg')
+@section('user-img')
 {{ asset('/storage/fotos/'.Auth::user()->foto) }}
 @stop
 
@@ -48,7 +48,7 @@
 @include('menu.profile-admin')
 @stop
 
-@section('name-user')
+@section('user-name')
 {!!Auth::user()->name!!}
 @stop
 

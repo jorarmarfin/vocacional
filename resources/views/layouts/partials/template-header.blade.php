@@ -309,8 +309,8 @@
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <img alt="" class="img-circle" src="@yield('userimg','../assets/layouts/layout/img/avatar3_small.jpg')" />
-                        <span class="username username-hide-on-mobile">@yield('username','Luis Mayta')  </span>
+                        <img alt="" class="img-circle" src="@yield('user-img','../assets/layouts/layout/img/avatar3_small.jpg')" />
+                        <span class="username username-hide-on-mobile">@yield('user-name','Luis Mayta')  </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
