@@ -3,6 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>@yield('title','::SisBa::')</title>
+    <!-- BEGIN PAGE FIRST SCRIPTS -->
+    @yield('js-plugins-first')
+    <!-- END PAGE FIRST SCRIPTS -->
+    <!-- BEGIN PAGE TOP STYLES -->
+    @yield('styles-plugins-first')
+    <!-- END PAGE TOP STYLES -->
 	@include('layouts.partials.styles-mandatory')
 	@include('layouts.partials.styles-plugins')
 	@include('layouts.partials.styles-global')
