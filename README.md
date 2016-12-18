@@ -1,2 +1,0 @@
-# Base
-Base para proyectos

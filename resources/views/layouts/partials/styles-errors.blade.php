@@ -1,1 +1,0 @@
-<link href={{asset("assets/pages/css/error.min.css")}} rel="stylesheet" type="text/css" />
