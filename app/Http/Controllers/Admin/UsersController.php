@@ -17,18 +17,7 @@ use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
-    public function __construct() {
-        $this->middleware('findUser',['only'=>['show','edit','update','destroy','userActivate']]);
-    }
-    /**
-     * Busca Usuario
-     * @param  Route  $route [description]
-     * @return [type]        [description]
-     */
-    /*public function findUser(Route $route)
-    {
-        $this->user = User::findOrFail($route->getParameter('users'));
-    }*/
+
     /**
      * Display a listing of the resource.
      *
@@ -64,7 +53,7 @@ class UsersController extends Controller
         if (isset($file)) {
             $namefile = $file->getClientOriginalName();
             $user['foto']= $namefile;
-            Storage::disk('local')->put('/fotos/'.$namefile,File::get($file));
+            Storage::disk('public')->put('/fotos/'.$namefile,File::get($file));
         };
 
         $user->save();
@@ -81,7 +70,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = $this->user;
+        $user = User::findOrFail($id);
         Alert::danger('ALERTA')->details('Esta seguro de eliminar este registro no podra deshacer esta opcion');
         return view('admin.users.delete',compact('user'));
     }
@@ -94,7 +83,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = $this->user;
+        $user = User::findOrFail($id);
         return view('admin.users.edit',compact('user'));
     }
 
@@ -107,8 +96,9 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->user->fill($request->all());
-        $this->user->save();
+        $user = User::findOrFail($id);
+        $user->fill($request->all());
+        $user->save();
         Alert::success('Usuario actualizado');
         return redirect()->route('admin.users.index');
     }

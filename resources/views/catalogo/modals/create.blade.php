@@ -6,6 +6,7 @@
                 <h4 class="modal-title">Nuevo {{ Session::get('tablename') }}</h4>
             </div>
 			{!! Form::open(['route'=>'catalogo.store','method'=>'POST']) !!}
+							{!!Form::hidden('tablename', Session::get('tablename') );!!}
 	            <div class="modal-body">
 					@if (Session::get('tablename') != 'jefatura')
 						<div class="form-group">

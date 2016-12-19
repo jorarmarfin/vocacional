@@ -31,9 +31,9 @@ class CatalogoController extends Controller
      * @param  Route  $route [description]
      * @return [type]        [description]
      */
-    public function setTable(Route $route)
+    public function setTable($tablename)
     {
-        $this->tablename = $route->table;
+        $this->tablename = $tablename;
 
         if (isset($this->tablename))Session::set('tablename',$this->tablename);
         else $this->tablename = Session::get('tablename');
@@ -47,8 +47,10 @@ class CatalogoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($tablename=null)
     {
+        $this->setTable($tablename);
+
         $Lista = $this->lista;
         return view('catalogo.index',compact('Lista'));
     }
@@ -71,7 +73,9 @@ class CatalogoController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->all();
+        $this->setTable($data['tablename']);
         $data['idtable'] = $this->idtable;
         $data['iditem'] = $this->sequence;
         Catalogo::create($data);
@@ -87,7 +91,7 @@ class CatalogoController extends Controller
      */
     public function show($id)
     {
-        $catalogo = $this->Catalogo;
+        $catalogo = Catalogo::findOrFail($id);
         Alert::danger('Alerta')
                 ->details('Esta seguro que desea eliminar este registro, no podra deshacer esta opcion:');
         return view('catalogo.delete',compact('catalogo'));
@@ -101,7 +105,7 @@ class CatalogoController extends Controller
      */
     public function edit($id)
     {
-        $catalogo = $this->Catalogo;
+        $catalogo = Catalogo::findOrFail($id);
         return view('catalogo.edit',compact('catalogo'));
     }
 
@@ -114,8 +118,9 @@ class CatalogoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->Catalogo->fill($request->all());
-        $this->Catalogo->save();
+        $catalogo = Catalogo::findOrFail($id);
+        $catalogo->fill($request->all());
+        $catalogo->save();
         Alert::success('Se actualizo el registro');
         return redirect()->route('catalogo.index');
     }
@@ -134,7 +139,8 @@ class CatalogoController extends Controller
     }
     public function active($id)
     {
-        $data['activo']=!$this->Catalogo->activo;
+        $catalogo = Catalogo::findOrFail($id);
+        $data['activo']=!$catalogo->activo;
         $this->Catalogo->fill($data);
         $this->Catalogo->save();
         Alert::success('Se activo el registro');
