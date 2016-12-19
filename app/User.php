@@ -14,9 +14,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $fillable = ['name', 'email', 'password','idrole','foto','activo'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -26,4 +24,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    /**
+     * Establecemos el la relacion con catalogo
+     * @return [type] [description]
+     */
+    public function role()
+    {
+        return $this->hasOne('\App\Models\Catalogo','id','idrole');
+    }
+    /**
+     * Atributos de la clase Users
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
 }

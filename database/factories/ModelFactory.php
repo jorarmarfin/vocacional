@@ -12,12 +12,13 @@
 */
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'email' => $faker->safeEmail,
+        'password' => 'secret',
+        'idrole' => $faker->randomElement($array = array (4,5,6)),
+        'foto'=> 'nofoto.jpg',
+        'activo' => true,
         'remember_token' => str_random(10),
     ];
 });

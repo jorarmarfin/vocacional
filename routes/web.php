@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+require __DIR__.'/home.route.php';
+require __DIR__.'/admin.route.php';
+require __DIR__.'/catalogo.route.php';
+require __DIR__.'/users.route.php';
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index');
