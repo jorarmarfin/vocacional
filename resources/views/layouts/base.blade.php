@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>@yield('title','::SisBa::')</title>
+	<title>@yield('title','Institucion Educativa Milagrosa Virgen de Chapi')</title>
     <!-- BEGIN PAGE FIRST SCRIPTS -->
     @yield('js-plugins-first')
     <!-- END PAGE FIRST SCRIPTS -->
