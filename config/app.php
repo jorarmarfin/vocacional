@@ -188,6 +188,10 @@ return [
          * PDF
          */
         Elibyy\TCPDF\ServiceProvider::class,
+        /**
+         * Macros para formularios
+         */
+        App\Providers\MacroServiceProvider::class,
     ],
 
     /*
