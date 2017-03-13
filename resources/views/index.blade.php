@@ -1,72 +1,47 @@
 @extends('layouts.base')
 
 @section('content')
-@section('content')
 <div class="row">
-	<div class="col-md-12">
-    {!! Alert::render() !!}
-    @include('alerts.errors')
-        <!-- BEGIN Portlet PORTLET-->
-        <div class="portlet box green">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-table"></i>
-                    Lista de Alumnos
-                </div>
-                <div class="tools">
-                    <a href="javascript:;" class="collapse"> </a>
-                    <a href="" class="fullscreen"> </a>
-                    <a href="javascript:;" class="remove"> </a>
-                </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat dashboard-stat-v2 blue" href="#">
+            <div class="visual">
+                <i class="fa fa-comments"></i>
             </div>
-            <div class="portlet-body">
-            {!!Form::boton('Nuevo Alumno','#','green','fa fa-plus')!!}
-            {!!Form::boton('Asistencia','#','green-meadow','fa fa-check')!!}
-            {!!Form::boton('Padres con email pendiente','#','green-seagreen','fa fa-edit')!!}
-            <p></p>
+            <div class="details">
+                <div class="number">
+                    <span >DATOS</span>
+                </div>
+                <div class="desc"> Datos Personales </div>
             </div>
-        </div>
-        <!-- END Portlet PORTLET-->
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat dashboard-stat-v2 red" href="#">
+            <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    <span >PAGO</span></div>
+                <div class="desc"> Formatos de pagos </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a class="dashboard-stat dashboard-stat-v2 green" href="#">
+            <div class="visual">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    <span >FICHA</span>
+                </div>
+                <div class="desc"> New Orders </div>
+            </div>
+        </a>
     </div>
 </div>
 
 @stop
-@stop
-
-
-
-
-
-
-
-
-
-
-@section('menu-user')
-@include('menu.profile-admin')
-@stop
-
-@section('sidebar')
-@include(Auth::user()->menu)
-@stop
-
-@section('userimg')
-{{ asset('storage/fotos/'.Auth::user()->foto) }}
-@stop
-
-@section('username')
-{!!Auth::user()->name!!}
-@stop
-
-
-
-@section('page-title')
-
-@stop
-
-@section('page-subtitle')
-
-@stop
-
 
 
