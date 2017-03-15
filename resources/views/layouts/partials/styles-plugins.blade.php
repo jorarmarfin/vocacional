@@ -1,2 +1,0 @@
-@yield('plugins-styles','')
-
