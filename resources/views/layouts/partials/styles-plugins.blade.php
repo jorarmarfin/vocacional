@@ -1,1 +1,1 @@
-@yield('plugins-styles','')
+@yield('styles-plugins','')
