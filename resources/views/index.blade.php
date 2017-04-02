@@ -1,7 +1,6 @@
 @extends('layouts.base')
 
 @section('content')
-@section('content')
 <div class="row">
 	<div class="col-md-12">
     {!! Alert::render() !!}
@@ -31,15 +30,6 @@
 </div>
 
 @stop
-@stop
-
-
-
-
-
-
-
-
 
 
 @section('menu-user')
@@ -50,11 +40,11 @@
 @include(Auth::user()->menu)
 @stop
 
-@section('userimg')
+@section('user-img')
 {{ asset('storage/fotos/'.Auth::user()->foto) }}
 @stop
 
-@section('username')
+@section('user-name')
 {!!Auth::user()->name!!}
 @stop
 

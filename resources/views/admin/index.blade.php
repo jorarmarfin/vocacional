@@ -1,5 +1,9 @@
 @extends('layouts.base')
 
+@section('content')
+qwe
+@stop
+
 @section('menu-user')
 @include('menu.profile-admin')
 @stop
@@ -9,7 +13,7 @@
 @stop
 
 @section('user-img')
-{{ asset('storage/fotos/'.Auth::user()->foto) }}
+{{ Auth::user()->mostrar_foto }}
 @stop
 
 @section('user-name')
@@ -27,8 +31,6 @@ Panel de
 
 @stop
 
-@section('content')
-qwe
-@stop
+
 
 

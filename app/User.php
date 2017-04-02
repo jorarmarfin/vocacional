@@ -24,6 +24,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+    * Atributos Mostrar Foto
+    */
+    public function getMostrarFotoAttribute()
+    {
+        return asset($this->foto);
+    }
+
     /**
      * Establecemos el la relacion con catalogo
      * @return [type] [description]
@@ -39,4 +48,5 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
 }

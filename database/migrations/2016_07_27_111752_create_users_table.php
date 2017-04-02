@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->integer('idrole')->unsigned();
-            $table->string('foto',50)->default('nofoto.jpg');
-            $table->string('menu',50)->default('menu.sider');
+            $table->string('foto',50)->default('assets/pages/img/avatars/nofoto.jpg');
+            $table->string('menu',50)->default('menu.sider-admin');
             $table->boolean('activo')->nullable();
             $table->rememberToken();
             $table->timestamps();

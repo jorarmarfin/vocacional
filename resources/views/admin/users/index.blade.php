@@ -31,7 +31,7 @@
 							<tr>
 								<td>{{$item->name}}</td>
 								<td>{{$item->email}}</td>
-								<td><img src="{{asset('/storage/fotos/'.$item->foto)}}" width='25px'></td>
+								<td><img src="{{$item->mostrar_foto}}" width='25px'></td>
 								<td>
 									<a href="{{ route('admin.users.edit',$item->id) }}" title="Editar"class="btn btn-icon-only green-haze" >
 										<i class="fa fa-edit"></i>
@@ -55,7 +55,7 @@
 @stop
 
 @section('user-img')
-{{ asset('/storage/fotos/'.Auth::user()->foto) }}
+{{ Auth::user()->mostrar_foto }}
 @stop
 
 @section('menu-user')
