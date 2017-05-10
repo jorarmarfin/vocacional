@@ -12,12 +12,8 @@
 				</div>
 			</div>
 			<div class="portlet-body">
-				<a href="#myModalNewUser" data-toggle="modal" class="btn blue">
-					<i class="fa fa-plus"></i>
-					<i class="fa fa-user"></i>
-				</a>
-				<div class="table-scrollable">
-					<table class="table table-striped table-hover" data-toggle="table" data-pagination="true" data-search="true">
+		{!!Form::botonmodal('Nuevo Usuario','#myModalNewUser','blue','fa fa-plus','margin-bottom-20')!!}
+					<table class="table table-striped table-hover midt">
 						<thead>
 							<tr>
 								<th>Nombre</th>
@@ -45,7 +41,6 @@
 						</tbody>
 					</table>
 
-				</div>
 			</div>
 
 		</div>
@@ -77,13 +72,3 @@
 
 @stop
 
-
-
-@section('plugins-styles')
-{!! Html::style('assets/global/plugins/bootstrap-table/bootstrap-table.min.css') !!}
-@stop
-
-@section('js-plugins')
-{!! Html::script('assets/global/plugins/jquery-ui/jquery-ui.min.js') !!}
-{!! Html::script('assets/global/plugins/bootstrap-table/bootstrap-table.min.js') !!}
-@stop

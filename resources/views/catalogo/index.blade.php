@@ -11,13 +11,12 @@
             </div>
             <div class="portlet-body">
                 	{!! Alert::render() !!}
-                    <a href="#NewPersonal" data-toggle="modal" class="btn blue">
+                    <a href="#NewPersonal" data-toggle="modal" class="btn blue margin-bottom-20">
                         <i class="fa fa-plus"></i>
                         <i class="fa fa-user"></i>
                     </a>
-                <div class="table-scrollable">
 
-                    <table class="table table-striped table-hover" data-toggle="table" data-pagination="true" data-search="true">
+                    <table class="table table-striped table-hover midt">
 
                         <thead>
                             <tr>
@@ -67,7 +66,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                </div>
             </div>
         </div>
         <!-- END SAMPLE TABLE PORTLET-->
@@ -75,6 +73,9 @@
 </div>
 @include('catalogo.modals.create')
 @stop
+
+
+
 
 @section('title')
 GESTION DE CATALOGO
@@ -101,14 +102,6 @@ GESTION DE CATALOGO
 
 
 @section('user-img')
-{!! asset('storage/fotos/'.Auth::user()->foto) !!}
+{!! Auth::user()->mostrar_foto !!}
 @stop
 
-@section('plugins-styles')
-{!! Html::style('assets/global/plugins/bootstrap-table/bootstrap-table.min.css') !!}
-@stop
-
-@section('js-plugins')
-{!! Html::script('assets/global/plugins/jquery-ui/jquery-ui.min.js') !!}
-{!! Html::script('assets/global/plugins/bootstrap-table/bootstrap-table.min.js') !!}
-@stop
