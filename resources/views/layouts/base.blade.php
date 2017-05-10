@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>@yield('title','Institucion Educativa Milagrosa Virgen de Chapi')</title>
+	<title>@yield('title','Sistema Base')</title>
     <!-- BEGIN PAGE FIRST SCRIPTS -->
     @yield('js-plugins-first')
     <!-- END PAGE FIRST SCRIPTS -->
@@ -69,5 +69,18 @@
     <script src={{asset("assets/layouts/layout/scripts/demo.min.js")}} type="text/javascript"></script>
     <script src={{asset("assets/layouts/global/scripts/quick-sidebar.min.js")}} type="text/javascript"></script>
     <!-- END THEME LAYOUT SCRIPTS -->
+    <!-- BEGIN PLUGINS SCRIPTS -->
+    {!! Html::script(asset('assets/global/plugins/jquery-ui/jquery-ui.min.js')) !!}
+    {!! Html::script(asset('assets/global/plugins/bootstrap-table/bootstrap-table.min.js')) !!}
+    {!! Html::script(asset('assets/global/plugins/select2/js/select2.full.min.js')) !!}
+    {!! Html::script(asset('assets/global/plugins/select2/js/i18n/es.js')) !!}
+    {!! Html::script(asset('assets/global/scripts/datatable.js')) !!}
+    {!! Html::script(asset('assets/global/plugins/datatables/datatables.min.js')) !!}
+    {!! Html::script(asset('assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js')) !!}
+
     @yield('js-scripts')
+    <!-- END PLUGINS SCRIPTS -->
+    <!-- BEGIN PERSONAL SCRIPTS -->
+    {!! Html::script(asset('js/midatatable.js')) !!}
+    <!-- END PERSONAL SCRIPTS -->
 </body>
