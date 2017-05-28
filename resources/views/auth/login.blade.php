@@ -7,7 +7,7 @@
     <div class="form-group">
             <div class="input-icon right ">
             <i class="fa fa-envelope"></i>
-            {!!Form::email('email',old('email'), ['class'=>'form-control','placeholder'=>'Email'])!!}
+            {!!Form::text('username',old('username'), ['class'=>'form-control','placeholder'=>'Username'])!!}
             </div>
     </div>
     <div class="form-group">
