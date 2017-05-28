@@ -18,7 +18,8 @@ class CatalogoTableSeeder extends Seeder
          * sub tablas
          */
         Catalogo::create(['idtable' => 1,'iditem' => 1, 'codigo' => 'root','nombre' => 'root','descripcion'=>'Administrador del sistema','valor'=> null,'activo'=>true]);
-        Catalogo::create(['idtable' => 1,'iditem' => 2, 'codigo' => 'admin','nombre' => 'Administrador','descripcion'=>'Administrador la Institucion educativa ','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 1,'iditem' => 2, 'codigo' => 'admin','nombre' => 'Administrador','descripcion'=>'Administrador del sistema','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 1,'iditem' => 3, 'codigo' => 'doc','nombre' => 'Docente','descripcion'=>'Docente Calificador ','valor'=> null,'activo'=>true]);
 
 
 
